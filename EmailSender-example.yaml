@@ -1,0 +1,9 @@
+apiVersion: tutorial.my.domain/v1
+kind: EmailSenderConfig
+metadata:
+  name: mailersend-config
+  namespace: default
+spec:
+  apiToken: "mlsn.b8aece04f40fe3d63bb44f1e1675285806b90127292c009f5bf9c5634747087e"
+  senderEmail: sender@trial-x2p0347ok7ygzdrn.mlsender.net
+  senderName: Sender

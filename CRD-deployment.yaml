@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-operator
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-operator
+  template:
+    metadata:
+      labels:
+        app: email-operator
+    spec:
+      serviceAccountName: default # Using the default service account
+      containers:
+        - name: email-operator
+          image: controller:latest
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: "800m"
+              memory: "256Mi"
+            requests:
+              cpu: "800m"
+              memory: "256Mi"
+          env:
+            - name: WATCH_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace

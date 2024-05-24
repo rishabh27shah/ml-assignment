@@ -1,0 +1,16 @@
+apiVersion: tutorial.my.domain/v1
+kind: Email
+metadata:
+  labels:
+    app.kubernetes.io/name: email
+    app.kubernetes.io/instance: email-sample
+    app.kubernetes.io/part-of: mailersend
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: mailersend
+  name: test-email
+  namespace: default
+spec:
+  senderConfigRef: mailersend-config
+  recipientEmail: test@mailinator.com
+  subject: Test Email
+  body: This is a test email sent from the Kubernetes operator.

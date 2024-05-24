@@ -1,0 +1,16 @@
+apiVersion: tutorial.my.domain/v1
+kind: EmailSenderConfig
+metadata:
+  labels:
+    app.kubernetes.io/name: emailsenderconfig
+    app.kubernetes.io/instance: emailsenderconfig-sample
+    app.kubernetes.io/part-of: mailersend
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: mailersend
+  # name: emailsenderconfig-sample
+  name: mailersend-config
+  namespace: default
+spec:
+  apiToken: "mlsn.abcd8-EXAMPLE_TOKEN-xyza1"
+  senderEmail: sender@trial-x2p0347ok7ygzdrn.mlsender.net
+  senderName: Sender

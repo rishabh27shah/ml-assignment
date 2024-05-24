@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mailersend-api-token
+  namespace: default
+type: Opaque
+stringData:
+  apiToken: "mlsn.b8aec-EXAMPLE_TOKEN-3bb8e"
